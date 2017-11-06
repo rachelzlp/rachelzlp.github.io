@@ -50,7 +50,7 @@
     
     <url>
     
-      <loc>https://rachelzlp.github.io/project/deep-learning/</loc>
+      <loc>https://rachelzlp.github.io/project/analytics/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,7 +59,7 @@
     
     <url>
     
-      <loc>https://rachelzlp.github.io/project/example-external-project/</loc>
+      <loc>https://rachelzlp.github.io/project/icbc/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
@@ -134,6 +134,16 @@
     
     <url>
     
+      <loc>https://rachelzlp.github.io/tags/ana/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://rachelzlp.github.io/categories/</loc>
       <priority>0</priority>
     </url>
@@ -143,7 +153,7 @@
     
     <url>
     
-      <loc>https://rachelzlp.github.io/tags/demo/</loc>
+      <loc>https://rachelzlp.github.io/tags/fin/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -175,16 +185,6 @@
     
       <loc>https://rachelzlp.github.io/</loc>
       <lastmod>2017-10-15T00:00:00+08:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://rachelzlp.github.io/tags/microeconomic-theory/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
