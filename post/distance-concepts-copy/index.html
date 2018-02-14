@@ -17,6 +17,11 @@
     
   
   
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
@@ -39,11 +44,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://rachelzlp.github.io/post/">
+  <link rel="canonical" href="https://rachelzlp.github.io/post/distance-concepts-copy/">
 
   
 
-  <title>Posts | Luping (Rachel) Zhao</title>
+  <title>Distance concepts in machine learning and its python implementation | Luping (Rachel) Zhao</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -152,27 +157,14 @@
 </nav>
 
 
-
-
-
-<div class="universal-wrapper">
-
-  <h1>Posts</h1>
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
-  
-  
+
+  <div class="article-container">
+    <h1 itemprop="name">Distance concepts in machine learning and its python implementation</h1>
     
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://rachelzlp.github.io/post/distance-concepts-copy-2/" itemprop="url">Distance concepts in machine learning and its python implementation</a>
-  </h3>
-  
 
 <div class="article-metadata">
 
@@ -196,140 +188,189 @@
   
 
   
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Distance%20concepts%20in%20machine%20learning%20and%20its%20python%20implementation&amp;url=https%3a%2f%2frachelzlp.github.io%2fpost%2fdistance-concepts-copy%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2frachelzlp.github.io%2fpost%2fdistance-concepts-copy%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2frachelzlp.github.io%2fpost%2fdistance-concepts-copy%2f&amp;title=Distance%20concepts%20in%20machine%20learning%20and%20its%20python%20implementation"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2frachelzlp.github.io%2fpost%2fdistance-concepts-copy%2f&amp;title=Distance%20concepts%20in%20machine%20learning%20and%20its%20python%20implementation"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Distance%20concepts%20in%20machine%20learning%20and%20its%20python%20implementation&amp;body=https%3a%2f%2frachelzlp.github.io%2fpost%2fdistance-concepts-copy%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
 
 </div>
 
-  <div class="article-style" itemprop="articleBody">
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2>Table of Contents</h2>
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#3d-euclidean-distance">3d Euclidean distance</a></li>
+<li><a href="#n-dimensional-euclidean-distance">N-dimensional Euclidean distance</a></li>
+<li><a href="#weighted-euclidean-distance">Weighted Euclidean distance</a></li>
+<li><a href="#cosine-similarity">Cosine similarity</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+<p>#Euclidean diantance</p>
+
+<p>##2d euclidean distance</p>
+
+<p>$d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y_{2})^2}$</p>
+
+<pre><code class="language-python">from numpy import *
+
+def twoPointDistance(a,b):
+    d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 )
+    return d
+</code></pre>
+
+<h2 id="3d-euclidean-distance">3d Euclidean distance</h2>
+
+<p>$d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y<em>{2})^2+(z</em>{1}-z_{2})^2}$</p>
+
+<pre><code class="language-python">def threePointDistance(a,b):
+    d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 )
+    return d
+</code></pre>
+
+<h2 id="n-dimensional-euclidean-distance">N-dimensional Euclidean distance</h2>
+
+<p>$\sqrt{\sum<em>{n}^{k=1}(x</em>{1k}-x_{2k})^2 }$</p>
+
+<pre><code>def distance(a,b):
+    sum = 0
+    for i in range(len(a)):
+        sum += (a[i]-b[i])**2
+    return sqrt(sum)
+</code></pre>
+
+<h2 id="weighted-euclidean-distance">Weighted Euclidean distance</h2>
+
+<p>$d<em>{12} =\sqrt {\sum</em>{k=1}^{n} (\frac{x<em>{1k}-x</em>{2k}}{s_{k}})^2}$</p>
+
+<pre><code class="language-python">def moreBZOSdis(a,b):
+    sumnum = 0
+    for i in range(len(a)):
+        # calculating si standard deviation
+        avg = (a[i]-b[i])/2
+        si = sqrt( (a[i] - avg) ** 2 + (b[i] - avg) ** 2 )
+        sumnum += ((a[i]-b[i])/si ) ** 2
+
+    return sqrt(sumnum)
+</code></pre>
+
+<p>#Manhattan distance</p>
+
+<p>$d<em>{12} = \sum</em>{k=1}^{n} \left | x<em>{1k} - x</em>{2k} \right |$</p>
+
+<pre><code class="language-python">def moreMHDdis(a,b):
+    sum = 0 
+    for i in range(len(a)):
+        sum += abs(a[i]-b[i])
+    return sum
+</code></pre>
+
+<p>##Chebyshev Distance</p>
+
+<p>2d:</p>
+
+<p>$d<em>{12} = max( \left | x</em>{1} - x<em>{2} \right | , \left | y</em>{1} - y_{2} \right |)$</p>
+
+<pre><code class="language-python">def twoQBXFdis(a,b):
+    return max( abs(a[0]-b[0]), abs(a[1]-b[1]))
+</code></pre>
+
+<p>n-dimensional:</p>
+
+<p>$d12 = max<em>{i\epsilon n}( \left | x</em>{1i} - x_{2i} \right | )$</p>
+
+<pre><code class="language-python">def moreQBXFdis(a,b):
+    maxnum = 0
+    for i in range(len(a)):
+        if abs(a[i]-b[i]) &gt; maxnum:
+            maxnum = abs(a[i]-b[i])
+    return maxnum
+</code></pre>
+
+<h2 id="cosine-similarity">Cosine similarity</h2>
+
+<p>N-dimensional cosine similarity between two vectors:</p>
+
+<p>$\cos \theta = \frac{ \sum<em>{k=1}^{n} x</em>{1k}x<em>{2k} }{ \sqrt{ \sum</em>{k=1}^{n}x<em>{1k}^2 }\sqrt{ \sum</em>{k=1}^{n} x_{2k}^2 } }$</p>
+
+<p>where $\cos \theta$ range from -1 to 1.</p>
+
+<pre><code class="language-python">def moreCos(a,b):
+    sum_fenzi = 0.0
+    sum_fenmu_1,sum_fenmu_2 = 0,0
+    for i in range(len(a)):
+        sum_fenzi += a[i]*b[i]
+        sum_fenmu_1 += a[i]**2 
+        sum_fenmu_2 += b[i]**2 
+
+    return sum_fenzi/( sqrt(sum_fenmu_1) * sqrt(sum_fenmu_2) )
+</code></pre>
+
+    </div>
+
     
-    Table of Contents    3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance Cosine similarity    #Euclidean diantance
-##2d euclidean distance
-$d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2}$
-from numpy import * def twoPointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 ) return d  3d Euclidean distance $d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y{2})^2+(z{1}-z_{2})^2}$
-def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 ) return d  N-dimensional Euclidean distance $\sqrt{\sum{n}^{k=1}(x{1k}-x_{2k})^2 }$
-def distance(a,b): sum = 0 for i in range(len(a)): sum += (a[i]-b[i])**2 return sqrt(sum)  Weighted Euclidean distance $d{12} =\sqrt {\sum{k=1}^{n} (\frac{x{1k}-x{2k}}{s_{k}})^2}$
     
+    
+    
+
   </div>
-  <p class="read-more">
-    <a href="https://rachelzlp.github.io/post/distance-concepts-copy-2/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
 
-  
-    
-    
+</article>
 
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://rachelzlp.github.io/post/distance-concepts-copy/" itemprop="url">Distance concepts in machine learning and its python implementation</a>
-  </h3>
-  
 
-<div class="article-metadata">
 
-  <span class="article-date">
-    
-    <time datetime="2016-04-17 00:00:00 &#43;0800 CST" itemprop="datePublished">
-      Apr 17, 2016
-    </time>
-  </span>
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
 
-  
-  
 
-  
-
+<div class="article-container">
   
 
 </div>
 
-  <div class="article-style" itemprop="articleBody">
-    
-    Table of Contents    3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance Cosine similarity    #Euclidean diantance
-##2d euclidean distance
-$d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2}$
-from numpy import * def twoPointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 ) return d  3d Euclidean distance $d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y{2})^2+(z{1}-z_{2})^2}$
-def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 ) return d  N-dimensional Euclidean distance $\sqrt{\sum{n}^{k=1}(x{1k}-x_{2k})^2 }$
-def distance(a,b): sum = 0 for i in range(len(a)): sum += (a[i]-b[i])**2 return sqrt(sum)  Weighted Euclidean distance $d{12} =\sqrt {\sum{k=1}^{n} (\frac{x{1k}-x{2k}}{s_{k}})^2}$
-    
-  </div>
-  <p class="read-more">
-    <a href="https://rachelzlp.github.io/post/distance-concepts-copy/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-    
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://rachelzlp.github.io/post/distance-concepts/" itemprop="url">Distance concepts in machine learning and its python implementation</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2016-04-17 00:00:00 &#43;0800 CST" itemprop="datePublished">
-      Apr 17, 2016
-    </time>
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
-
-  
-  
-
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    Table of Contents    3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance Cosine similarity    #Euclidean diantance
-##2d euclidean distance
-$d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2}$
-from numpy import * def twoPointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 ) return d  3d Euclidean distance $d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y{2})^2+(z{1}-z_{2})^2}$
-def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 ) return d  N-dimensional Euclidean distance $\sqrt{\sum{n}^{k=1}(x{1k}-x_{2k})^2 }$
-def distance(a,b): sum = 0 for i in range(len(a)): sum += (a[i]-b[i])**2 return sqrt(sum)  Weighted Euclidean distance $d{12} =\sqrt {\sum{k=1}^{n} (\frac{x{1k}-x{2k}}{s_{k}})^2}$
-    
-  </div>
-  <p class="read-more">
-    <a href="https://rachelzlp.github.io/post/distance-concepts/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-
-  
-
-
-</div>
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
@@ -398,6 +439,17 @@ def distance(a,b): sum = 0 for i in range(len(a)): sum += (a[i]-b[i])**2 return 
     
 
     
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
     
 
     
