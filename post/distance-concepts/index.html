@@ -38,6 +38,19 @@
   
 
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-114162696-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
 
   
 
@@ -234,11 +247,9 @@
 <li><a href="#n-dimensional-euclidean-distance">N-dimensional Euclidean distance</a></li>
 <li><a href="#weighted-euclidean-distance">Weighted Euclidean distance</a></li>
 </ul></li>
-<li><a href="#manhattan-distance">Manhattan distance</a>
-<ul>
+<li><a href="#manhattan-distance">Manhattan distance</a></li>
 <li><a href="#chebyshev-distance">Chebyshev Distance</a></li>
 <li><a href="#cosine-similarity">Cosine similarity</a></li>
-</ul></li>
 </ul>
 </nav>
 
@@ -302,7 +313,7 @@ def twoPointDistance(a,b):
     return sum
 </code></pre>
 
-<h2 id="chebyshev-distance">Chebyshev Distance</h2>
+<h1 id="chebyshev-distance">Chebyshev Distance</h1>
 
 <p>2d:</p>
 
@@ -324,7 +335,7 @@ def twoPointDistance(a,b):
     return maxnum
 </code></pre>
 
-<h2 id="cosine-similarity">Cosine similarity</h2>
+<h1 id="cosine-similarity">Cosine similarity</h1>
 
 <p>N-dimensional cosine similarity between two vectors:</p>
 

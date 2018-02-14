@@ -33,6 +33,19 @@
   
 
   
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-114162696-1', 'auto');
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
 
   
 
@@ -189,7 +202,7 @@
 
   <div class="article-style" itemprop="articleBody">
     
-    Table of Contents  Euclidean diantance  2d euclidean distance 3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance  Manhattan distance  Chebyshev Distance Cosine similarity    Euclidean diantance 2d euclidean distance $$ d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2} $$
+    Table of Contents  Euclidean diantance  2d euclidean distance 3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance  Manhattan distance Chebyshev Distance Cosine similarity   Euclidean diantance 2d euclidean distance $$ d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2} $$
 from numpy import * def twoPointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 ) return d  3d Euclidean distance $$ d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y{2})^2+(z{1}-z_{2})^2} $$
 def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 ) return d  N-dimensional Euclidean distance $$ \sqrt{\sum{n}^{k=1}(x{1k}-x_{2k})^2 } $$
     
