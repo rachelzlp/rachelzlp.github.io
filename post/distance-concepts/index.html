@@ -239,22 +239,27 @@
 <h2>Table of Contents</h2>
 <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#euclidean-diantance">Euclidean diantance</a>
 <ul>
+<li><a href="#2d-euclidean-distance">2d euclidean distance</a></li>
 <li><a href="#3d-euclidean-distance">3d Euclidean distance</a></li>
 <li><a href="#n-dimensional-euclidean-distance">N-dimensional Euclidean distance</a></li>
 <li><a href="#weighted-euclidean-distance">Weighted Euclidean distance</a></li>
+</ul></li>
+<li><a href="#manhattan-distance">Manhattan distance</a>
+<ul>
+<li><a href="#chebyshev-distance">Chebyshev Distance</a></li>
 <li><a href="#cosine-similarity">Cosine similarity</a></li>
 </ul></li>
 </ul>
 </nav>
 
 
-<p>#Euclidean diantance</p>
+<h1 id="euclidean-diantance">Euclidean diantance</h1>
 
-<p>##2d euclidean distance</p>
+<h2 id="2d-euclidean-distance">2d euclidean distance</h2>
 
-<p>$d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y_{2})^2}$</p>
+<p>$$ d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y_{2})^2} $$</p>
 
 <pre><code class="language-python">from numpy import *
 
@@ -265,7 +270,7 @@ def twoPointDistance(a,b):
 
 <h2 id="3d-euclidean-distance">3d Euclidean distance</h2>
 
-<p>$d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y<em>{2})^2+(z</em>{1}-z_{2})^2}$</p>
+<p>$$ d<em>{12} =\sqrt{(x</em>{1}-x<em>{2})^2+(y</em>{1}-y<em>{2})^2+(z</em>{1}-z_{2})^2} $$</p>
 
 <pre><code class="language-python">def threePointDistance(a,b):
     d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 )
@@ -274,7 +279,7 @@ def twoPointDistance(a,b):
 
 <h2 id="n-dimensional-euclidean-distance">N-dimensional Euclidean distance</h2>
 
-<p>$\sqrt{\sum<em>{n}^{k=1}(x</em>{1k}-x_{2k})^2 }$</p>
+<p>$$ \sqrt{\sum<em>{n}^{k=1}(x</em>{1k}-x_{2k})^2 } $$</p>
 
 <pre><code>def distance(a,b):
     sum = 0
@@ -285,7 +290,7 @@ def twoPointDistance(a,b):
 
 <h2 id="weighted-euclidean-distance">Weighted Euclidean distance</h2>
 
-<p>$d<em>{12} =\sqrt {\sum</em>{k=1}^{n} (\frac{x<em>{1k}-x</em>{2k}}{s_{k}})^2}$</p>
+<p>$$d<em>{12} =\sqrt {\sum</em>{k=1}^{n} (\frac{x<em>{1k}-x</em>{2k}}{s_{k}})^2}$$</p>
 
 <pre><code class="language-python">def moreBZOSdis(a,b):
     sumnum = 0
@@ -298,9 +303,9 @@ def twoPointDistance(a,b):
     return sqrt(sumnum)
 </code></pre>
 
-<p>#Manhattan distance</p>
+<h1 id="manhattan-distance">Manhattan distance</h1>
 
-<p>$d<em>{12} = \sum</em>{k=1}^{n} \left | x<em>{1k} - x</em>{2k} \right |$</p>
+<p>$$d<em>{12} = \sum</em>{k=1}^{n} \left | x<em>{1k} - x</em>{2k} \right |$$</p>
 
 <pre><code class="language-python">def moreMHDdis(a,b):
     sum = 0 
@@ -309,11 +314,11 @@ def twoPointDistance(a,b):
     return sum
 </code></pre>
 
-<p>##Chebyshev Distance</p>
+<h2 id="chebyshev-distance">Chebyshev Distance</h2>
 
 <p>2d:</p>
 
-<p>$d<em>{12} = max( \left | x</em>{1} - x<em>{2} \right | , \left | y</em>{1} - y_{2} \right |)$</p>
+<p>$$d<em>{12} = max( \left | x</em>{1} - x<em>{2} \right | , \left | y</em>{1} - y_{2} \right |)$$</p>
 
 <pre><code class="language-python">def twoQBXFdis(a,b):
     return max( abs(a[0]-b[0]), abs(a[1]-b[1]))
@@ -321,7 +326,7 @@ def twoPointDistance(a,b):
 
 <p>n-dimensional:</p>
 
-<p>$d12 = max<em>{i\epsilon n}( \left | x</em>{1i} - x_{2i} \right | )$</p>
+<p>$$d12 = max<em>{i\epsilon n}( \left | x</em>{1i} - x_{2i} \right | )$$</p>
 
 <pre><code class="language-python">def moreQBXFdis(a,b):
     maxnum = 0
@@ -335,9 +340,9 @@ def twoPointDistance(a,b):
 
 <p>N-dimensional cosine similarity between two vectors:</p>
 
-<p>$\cos \theta = \frac{ \sum<em>{k=1}^{n} x</em>{1k}x<em>{2k} }{ \sqrt{ \sum</em>{k=1}^{n}x<em>{1k}^2 }\sqrt{ \sum</em>{k=1}^{n} x_{2k}^2 } }$</p>
+<p>$$\cos \theta = \frac{ \sum<em>{k=1}^{n} x</em>{1k}x<em>{2k} }{ \sqrt{ \sum</em>{k=1}^{n}x<em>{1k}^2 }\sqrt{ \sum</em>{k=1}^{n} x_{2k}^2 } }$$</p>
 
-<p>where $\cos \theta$ range from -1 to 1.</p>
+<p>where $$\cos \theta$$ range from -1 to 1.</p>
 
 <pre><code class="language-python">def moreCos(a,b):
     sum_fenzi = 0.0
