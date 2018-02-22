@@ -17,6 +17,11 @@
     
   
   
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css" integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A==" crossorigin="anonymous">
@@ -52,11 +57,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://rachelzlp.github.io/post/">
+  <link rel="canonical" href="https://rachelzlp.github.io/post/a-transportation-optimization-algorithm/">
 
   
 
-  <title>Posts | Luping (Rachel) Zhao</title>
+  <title>A Transportation Optimization Algorithm | Luping (Rachel) Zhao</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -153,27 +158,14 @@
 </nav>
 
 
-
-
-
-<div class="universal-wrapper">
-
-  <h1>Posts</h1>
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
-  
-  
+
+  <div class="article-container">
+    <h1 itemprop="name">A Transportation Optimization Algorithm</h1>
     
-    
-
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://rachelzlp.github.io/post/a-transportation-optimization-algorithm/" itemprop="url">A Transportation Optimization Algorithm</a>
-  </h3>
-  
 
 <div class="article-metadata">
 
@@ -197,80 +189,91 @@
   
 
   
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=A%20Transportation%20Optimization%20Algorithm&amp;url=https%3a%2f%2frachelzlp.github.io%2fpost%2fa-transportation-optimization-algorithm%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2frachelzlp.github.io%2fpost%2fa-transportation-optimization-algorithm%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2frachelzlp.github.io%2fpost%2fa-transportation-optimization-algorithm%2f&amp;title=A%20Transportation%20Optimization%20Algorithm"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2frachelzlp.github.io%2fpost%2fa-transportation-optimization-algorithm%2f&amp;title=A%20Transportation%20Optimization%20Algorithm"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=A%20Transportation%20Optimization%20Algorithm&amp;body=https%3a%2f%2frachelzlp.github.io%2fpost%2fa-transportation-optimization-algorithm%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
 
 </div>
 
-  <div class="article-style" itemprop="articleBody">
+    <div class="article-style" itemprop="articleBody">
+      <h2>Table of Contents</h2>
+
+
+
+<p>At Amazon, I took on several optimization projects, this is one about transportation optimization, and this is the background of how I came up with this idea:</p>
+
+<p>If you are not interested, you can jump to <a href="https://github.com/rachelzlp/AMZN" target="_blank">my github page</a> for this algorithm, and for the technical document of this algorithm, click <a href="https://github.com/rachelzlp/AMZN/raw/master/Document.pdf" target="_blank">here</a>.</p>
+
+<p>At the end of my first month in Amazon, the leader of the transportation team required a tool to increase the efficiency of the vehicles and I volunteered to take that responsibility.</p>
+
+<p>During my daily work of data analysis, I noticed that Amazon returned cargoes to vendors frequently, but the quantity for every load was small, which incurred a lot of extra cost. I hope to optimize the transportation routine, allowing Amazon to reach multiple vendors in one-way, in order to cut down the cost. My supervisor appreciated this idea and encouraged me to work on it.</p>
+
+<p>After careful consideration, I decided to create a model which automatically selects the best routine. The 1st step is to read the scattered inbound vendor location data. I randomly select 80\% of the data from 2016 and fit the data. The fitted line with several nodes on it will become an initial route. Then I used Grid-search, including the locations within 5 km of the initial route into the route, adding up more drop-off locations for cargoes’ return. After that, I had a brief meeting with colleagues from the transportation team and the fulfillment center and applied multiple constrains (e.g. Time limit to 7 hours; Weight and volume limit to truck load; the marginal increase does not result in additional labor cost.) and limited the number of vendor locations in one route no more than 15. Lastly, I used the rest of 2016 data to test the performance of the model. Results indicated that about 50\% of the return cargoes can be delivered along with the inbound procedure and the adjusted route achieved 3\% reduction of total traveling distance on average.</p>
+
+<p>However, problems emerged in data processing, I noticed that the data gathering code ran slowly. I discussed this issue with my supervisor and we found this problem origins from the database structure. The dataset was not that clean: the original designer put all data in one table. In this case, I spent 2 weeks with my supervisor designing connections and listing the optimization plan. This improvement successfully reduced the program execution time by 80\%. Meanwhile, I drew a clear picture of the database structure and highlighted the location for most frequently used data, making it much easier to handle for my successor.</p>
+
+<p>After finishing the model testing, I compiled a tool and wrote an instruction document to facilitate other colleagues to use it. The leader of the transportation team and my supervisor were impressed with my work and creativity. With their recommendation, I am delighted to have a return offer form Amazon.</p>
+
+    </div>
+
     
-    Table of Contents At Amazon, I took on several optimization projects, this is one about transportation optimization, and this is the background of how I came up with this idea:
-If you are not interested, you can jump to my github page for this algorithm, and for the technical document of this algorithm, click here.
-At the end of my first month in Amazon, the leader of the transportation team required a tool to increase the efficiency of the vehicles and I volunteered to take that responsibility.
     
+    
+    
+
   </div>
-  <p class="read-more">
-    <a href="https://rachelzlp.github.io/post/a-transportation-optimization-algorithm/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
 
-  
-    
-    
+</article>
 
-<div class="article-list-item" itemscope itemprop="blogPost">
-  
-  
-  <h3 class="article-title" itemprop="name">
-    <a href="https://rachelzlp.github.io/post/distance-concepts/" itemprop="url">Distance concepts in machine learning and its python implementation</a>
-  </h3>
-  
 
-<div class="article-metadata">
 
-  <span class="article-date">
-    
-    <time datetime="2016-04-17 00:00:00 &#43;0800 CST" itemprop="datePublished">
-      Apr 17, 2016
-    </time>
-  </span>
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
 
-  
-  
 
-  
-
+<div class="article-container">
   
 
 </div>
 
-  <div class="article-style" itemprop="articleBody">
-    
-    Table of Contents  Euclidean diantance  2d euclidean distance 3d Euclidean distance N-dimensional Euclidean distance Weighted Euclidean distance  Manhattan distance Chebyshev Distance Cosine similarity   Euclidean diantance 2d euclidean distance $$ d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y_{2})^2} $$
-from numpy import * def twoPointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 ) return d  3d Euclidean distance $$ d{12} =\sqrt{(x{1}-x{2})^2+(y{1}-y{2})^2+(z{1}-z_{2})^2} $$
-def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b[2])**2 ) return d  N-dimensional Euclidean distance $$ \sqrt{\sum{n}^{k=1}(x{1k}-x_{2k})^2 } $$
-    
-  </div>
-  <p class="read-more">
-    <a href="https://rachelzlp.github.io/post/distance-concepts/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-  
-
-  
-
-
-</div>
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
@@ -339,6 +342,17 @@ def threePointDistance(a,b): d = sqrt( (a[0]-b[0])**2 + (a[1]-b[1])**2 + (a[2]-b
     
 
     
+    
+      
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+      
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
     
 
     
