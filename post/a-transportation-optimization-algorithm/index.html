@@ -235,11 +235,7 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <h2>Table of Contents</h2>
-
-
-
-<p>At Amazon, I took on several optimization projects, this is one about transportation optimization, and this is the background of how I came up with this idea:</p>
+      <p>At Amazon, I took on several optimization projects, this is one about transportation optimization, and this is the background of how I came up with this idea:</p>
 
 <p>If you are not interested, you can jump to <a href="https://github.com/rachelzlp/AMZN" target="_blank">my github page</a> for this algorithm, and for the technical document of this algorithm, click <a href="https://github.com/rachelzlp/AMZN/raw/master/Document.pdf" target="_blank">here</a>.</p>
 
@@ -247,9 +243,9 @@
 
 <p>During my daily work of data analysis, I noticed that Amazon returned cargoes to vendors frequently, but the quantity for every load was small, which incurred a lot of extra cost. I hope to optimize the transportation routine, allowing Amazon to reach multiple vendors in one-way, in order to cut down the cost. My supervisor appreciated this idea and encouraged me to work on it.</p>
 
-<p>After careful consideration, I decided to create a model which automatically selects the best routine. The 1st step is to read the scattered inbound vendor location data. I randomly select 80\% of the data from 2016 and fit the data. The fitted line with several nodes on it will become an initial route. Then I used Grid-search, including the locations within 5 km of the initial route into the route, adding up more drop-off locations for cargoes’ return. After that, I had a brief meeting with colleagues from the transportation team and the fulfillment center and applied multiple constrains (e.g. Time limit to 7 hours; Weight and volume limit to truck load; the marginal increase does not result in additional labor cost.) and limited the number of vendor locations in one route no more than 15. Lastly, I used the rest of 2016 data to test the performance of the model. Results indicated that about 50\% of the return cargoes can be delivered along with the inbound procedure and the adjusted route achieved 3\% reduction of total traveling distance on average.</p>
+<p>After careful consideration, I decided to create a model which automatically selects the best routine. The 1st step is to read the scattered inbound vendor location data. I randomly select 80% of the data from 2016 and fit the data. The fitted line with several nodes on it will become an initial route. Then I used Grid-search, including the locations within 5 km of the initial route into the route, adding up more drop-off locations for cargoes’ return. After that, I had a brief meeting with colleagues from the transportation team and the fulfillment center and applied multiple constrains (e.g. Time limit to 7 hours; Weight and volume limit to truck load; the marginal increase does not result in additional labor cost.) and limited the number of vendor locations in one route no more than 15. Lastly, I used the rest of 2016 data to test the performance of the model. Results indicated that about 50% of the return cargoes can be delivered along with the inbound procedure and the adjusted route achieved 3% reduction of total traveling distance on average.</p>
 
-<p>However, problems emerged in data processing, I noticed that the data gathering code ran slowly. I discussed this issue with my supervisor and we found this problem origins from the database structure. The dataset was not that clean: the original designer put all data in one table. In this case, I spent 2 weeks with my supervisor designing connections and listing the optimization plan. This improvement successfully reduced the program execution time by 80\%. Meanwhile, I drew a clear picture of the database structure and highlighted the location for most frequently used data, making it much easier to handle for my successor.</p>
+<p>However, problems emerged in data processing, I noticed that the data gathering code ran slowly. I discussed this issue with my supervisor and we found this problem origins from the database structure. The dataset was not that clean: the original designer put all data in one table. In this case, I spent 2 weeks with my supervisor designing connections and listing the optimization plan. This improvement successfully reduced the program execution time by 80%. Meanwhile, I drew a clear picture of the database structure and highlighted the location for most frequently used data, making it much easier to handle for my successor.</p>
 
 <p>After finishing the model testing, I compiled a tool and wrote an instruction document to facilitate other colleagues to use it. The leader of the transportation team and my supervisor were impressed with my work and creativity. With their recommendation, I am delighted to have a return offer form Amazon.</p>
 
